@@ -140,3 +140,13 @@ maintainable migration approach based on industry best practices.
 
 By following the outlined structure and techniques, you can move your
 application into modern Angular step by step—without breaking production.
+
+## Known Issues
+
+- AngularJS directive compatibility issues during hybrid mode
+- Pending full migration of services to Angular
+
+## Future Improvements
+
+- Add Jest tests
+- Add Angular Routing

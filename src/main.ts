@@ -2,24 +2,24 @@
   Bootstrapping the AngularJS app from within the Angular
 */
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { UpgradeModule } from '@angular/upgrade/static';
-import 'reflect-metadata';
+//Initialize Angular modules
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { UpgradeModule } from "@angular/upgrade/static";
+import "reflect-metadata";
+import { AppModule } from "./app/app.module";
+import { downgradeItems } from "./downgrades";
 
-import { AppModule } from './app/app.module';
-import { downgradeItems } from './downgrades';
-
-platformBrowserDynamic().bootstrapModule(AppModule).then(platformRef => {
-
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .then((platformRef) => {
     //Angular -> AngularJS downgrades
     downgradeItems();
 
-    console.log('---- Bootstrapping Angular1 App from within Angular ----');
+    console.log("---- Bootstrapping Angular1 App from within Angular ----");
     const upgrade = platformRef.injector.get(UpgradeModule) as UpgradeModule;
-    upgrade.bootstrap(document.documentElement, ['home.app']);
-    console.log('---- Bootstrapped the Hybrid Application ----');
-});
-
+    upgrade.bootstrap(document.documentElement, ["home.app"]);
+    console.log("---- Bootstrapped the Hybrid Application ----");
+  });
 
 /* 
     Manually Bootstrapping the AngularJS app. This must be done instead
