@@ -1,0 +1,21 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Angular build output
+dist/
+tmp/
+out-tsc/
+
+# Environment files
+.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
+
+# OS generated
+.DS_Store
+Thumbs.db
